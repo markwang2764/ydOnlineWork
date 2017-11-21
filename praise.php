@@ -23,14 +23,16 @@ class Conmysql{
       die();
     }
   }
-  public function updateData($sql)
+  public function updateDate($sql)
   {
     if($this->con==null){
       $this->getConnection();
     }
     //var_dump($this->con);
+    header('content-type: application/json;charset=urf-8');
     $res = $this->con->exec($sql);
-    var_dump($res);
+    $arr = array('result'=>$res);
+    echo json_encode($arr);
     $this -> closeCon();
   }
   public function closeCon()
@@ -42,12 +44,12 @@ class realConn extends Conmysql{
   public function __construct($servername, $username, $password, $dbname){
     parent::__construct($servername, $username, $password, $dbname);
   }
-  public function updateRealData()
+  public function updateRealDate()
   {
     $sql = "UPDATE praiseThumb SET num = num + 1 WHERE id=1";
-    $this->updateData($sql);
+    $this->updateDate($sql);
   }
 }
 $praiseCon=new realConn('127.0.0.1', 'root', 'w', 'homework');
-$praiseCon->updateRealData();
+$praiseCon->updateRealDate();
 ?>

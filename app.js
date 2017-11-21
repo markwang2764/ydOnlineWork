@@ -12,7 +12,6 @@ import babel_po from 'babel-polyfill'
 const app = new koa()
 
 initController.init(app,router);
-
 app.context.render = co.wrap(render({
   root: CONFIG.get("viewDir"),
   autoescape: true,

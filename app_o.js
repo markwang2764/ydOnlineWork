@@ -41,7 +41,6 @@ var serve = require('koa-static');
 var app = new _koa2.default();
 
 _initController2.default.init(app, _koaSimpleRouter2.default);
-
 app.context.render = _co2.default.wrap((0, _koaSwig2.default)({
   root: _config2.default.get("viewDir"),
   autoescape: true,
