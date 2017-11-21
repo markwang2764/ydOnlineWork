@@ -13,7 +13,7 @@ class indexModel {
         console.log('res:'+res);
         const info = JSON.parse(res);
         if(info){
-          resolve({data: info.result})
+          resolve(info)
         }else{
           reject({})
         }

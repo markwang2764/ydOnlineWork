@@ -15,6 +15,13 @@ export default StyleSheet.create({
         "overflow": "hidden",
         "background": "radial-gradient(ellipse at top left, #94D28A 0%, #D0D8CB 57%)"
     },
+    "total": {
+        "fontSize": 30,
+        "color": "red",
+        "position": "absolute",
+        "top": 100,
+        "right": 100
+    },
     "hand": {
         "position": "relative",
         "top": "30%",

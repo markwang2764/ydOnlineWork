@@ -31,9 +31,13 @@ class Conmysql{
     //var_dump($this->con);
     header('content-type: application/json;charset=urf-8');
     $res = $this->con->exec($sql);
-    $arr = array('result'=>$res);
-    echo json_encode($arr);
-    $this -> closeCon();
+    if($res==1) {
+      $num = $this->con->query("SELECT num FROM praiseThumb WHERE id=1")->fetch();
+      $arr = array('result'=>$res,'data'=>$num[0]);
+      echo json_encode($arr);
+      $this -> closeCon();
+    }
+
   }
   public function closeCon()
   {

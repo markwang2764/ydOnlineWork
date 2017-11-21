@@ -9,7 +9,7 @@ class PraiseButton {
         clearTimeout(method.tId);
         method.tId = setTimeout(function(){
             method.call(context);
-        },100);
+        },200);
     }
 
     clickAction() {
@@ -28,7 +28,8 @@ class PraiseButton {
               console.log(this.num);
               axios.get('/index/update')
               .then(function (response) {
-                console.log(response);
+                let num = response.data.data
+                $('.total').text(num)
               })
               .catch(function (error) {
                 console.log(error);

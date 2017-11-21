@@ -28,7 +28,7 @@ var PraiseButton = function () {
       clearTimeout(method.tId);
       method.tId = setTimeout(function () {
         method.call(context);
-      }, 100);
+      }, 200);
     }
   }, {
     key: 'clickAction',
@@ -51,7 +51,8 @@ var PraiseButton = function () {
         }, 1000);
         console.log(this.num);
         axios.get('/index/update').then(function (response) {
-          console.log(response);
+          var num = response.data.data;
+          $('.total').text(num);
         }).catch(function (error) {
           console.log(error);
         });

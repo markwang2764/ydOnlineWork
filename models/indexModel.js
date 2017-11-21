@@ -33,7 +33,7 @@ var indexModel = function () {
           console.log('res:' + res);
           var info = JSON.parse(res);
           if (info) {
-            resolve({ data: info.result });
+            resolve(info);
           } else {
             reject({});
           }

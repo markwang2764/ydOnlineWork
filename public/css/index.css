@@ -6,6 +6,13 @@ body {
 body {
       background: radial-gradient(ellipse at top left, #94D28A 0%, #D0D8CB 57%);
   }
+  .total{
+    font-size: 30px;
+    color: red;
+    position: absolute;
+    top: 100px;
+    right: 100px;
+  }
   .hand{
     position: relative;
       top: 30%;
