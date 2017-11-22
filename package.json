@@ -15,8 +15,10 @@
     "koa-simple-router": "^0.2.0",
     "koa-static": "^4.0.2",
     "path": "^0.12.7",
+    "protractor": "^5.2.0",
     "request": "^2.83.0",
-    "request-promise": "^4.2.2"
+    "request-promise": "^4.2.2",
+    "selenium-standalone": "^6.11.0"
   },
   "devDependencies": {
     "babel-polyfill": "^6.26.0",
@@ -29,6 +31,8 @@
     "karma-jasmine": "^1.1.0",
     "karma-phantomjs-launcher": "^1.0.4",
     "koa-swig": "^2.2.1",
-    "phantomjs": "^2.1.7+deprecated"
+    "mocha": "^4.0.1",
+    "phantomjs": "^2.1.7+deprecated",
+    "supertest": "^3.0.0"
   }
 }
