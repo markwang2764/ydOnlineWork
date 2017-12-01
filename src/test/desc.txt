@@ -1,0 +1,3 @@
+karma 单元测试: karma start
+mocha + supertest 接口测试: test/server-es.js
+selenium-webdriver web还原测试: node test/e2e.js
