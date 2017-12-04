@@ -1,0 +1,106 @@
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+}
+body {
+      background: radial-gradient(ellipse at top left, #94D28A 0%, #D0D8CB 57%);
+  }
+  .total{
+    font-size: 30px;
+    color: red;
+    position: absolute;
+    top: 100px;
+    right: 100px;
+  }
+  .hand{
+    position: relative;
+      top: 300px;
+      left: 50%;
+      background-color: #f3c5ad;
+      width: 300px;
+      height: 230px;
+      border-radius: 30px;
+      border: 1px solid #8c3e15;
+      -webkit-transform: rotate(90deg);
+      cursor: pointer;
+  }
+  .hand:before
+    {
+      display: block;
+      content: '';
+      height: 260px;
+      width: 200px ;
+      background-color: #f3c5ad;
+      position: absolute;
+      left: 50px;
+      bottom: -220px;
+      border-left: 1px solid #8c3e15;
+    }
+    .hand:after
+      {
+        display: block;
+        content: '';
+        height: 80px;
+        width: 200px ;
+        background-color: #f3c5ad;
+        position: absolute;
+        left: -120px;
+        bottom: 30px;
+        border-left: 1px solid #8c3e15;
+        border-radius: 80px;
+        -webkit-transform: rotate(30deg);
+        z-index: -10;
+        box-shadow:80px -10px 80px -2px rgb(246, 222, 200) inset,140px -10px 50px -2px rgb(226, 179, 146) inset;
+      }
+      .finger,.finger:before {
+        position: absolute;
+        bottom: 80%;
+        right: 0;
+        width: 75px;
+        height: 75px;
+        border-radius:  75px 75px 0 0;
+        background-color: #f3c5ad;
+        border-left: 1px solid #b9511b;
+        border-right: 1px solid #b9511b;
+        border-top: 1px solid #b9511b;
+        box-shadow:10px -1px 30px 10px rgb(246, 222, 200) inset,10px -10px 50px -2px rgb(226, 179, 146) inset;
+      }
+    .finger:before  {
+        display: block;
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 74px;
+      }
+      .hand .finger:nth-of-type(2) {
+          right: 149px;
+      }
+      .hide{
+        display: none;
+      }
+      .num {
+          display: block !important;
+          -webkit-animation: neon2 5s ease-in-out alternate;
+          animation: neon2 3s ease-in-out alternate;
+          -webkit-animation-iteration-count: 1;
+          /* Safari 和 Chrome */
+          font-size: 40px;
+          color: #FF1177;
+          position: absolute;
+          right: 0%;
+          top: 0%;
+      }
+      @-webkit-keyframes neon2 {
+          0% {
+              opacity: 0;
+              right: 0px;top:0px;font-size: 30px;
+              text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
+          }
+
+          50% {
+              opacity: 1;
+                right: 30%;top:200px;font-size: 80px;
+               text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
+          }
+      }
