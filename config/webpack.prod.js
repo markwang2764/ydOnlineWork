@@ -54,7 +54,7 @@ module.exports = {
     new optimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/g,
       cssProcessor: require('cssnano'),
-      cssProcessorOptions: { discardComments: { removeAll : true} },
+      cssProcessorOptions: { discardComments: { removeAll : true } },
       canPrint: true
     }),
     new webpack.optimize.CommonsChunkPlugin({

@@ -3,6 +3,7 @@ class PraiseButton {
     constructor() {
     }
     clickAction() {
+      console.log(22);
       axios.get('/index/update')
       .then(function (response) {
         let num = response.data.data

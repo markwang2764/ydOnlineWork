@@ -50,7 +50,7 @@ module.exports = {
       filename: 'public/scripts/common/vendor-[hash:5].min.js'
     }),
     new HtmlWebpackPlugin({
-      filename: './widget/layout.html',
+      filename: './views/layout.html',
       template: 'src/widget/layout.html',
       inject: false
     }),
@@ -62,7 +62,8 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       filename: './widget/index.html',
-      template: 'src/widget/index.html'
+      template: 'src/widget/index.html',
+      inject: false,
     })
   ]
 }
