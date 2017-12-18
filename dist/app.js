@@ -16,6 +16,18 @@ var _koaSwig = require('koa-swig');
 
 var _koaSwig2 = _interopRequireDefault(_koaSwig);
 
+var _koaConvert = require('koa-convert');
+
+var _koaConvert2 = _interopRequireDefault(_koaConvert);
+
+var _path = require('path');
+
+var _path2 = _interopRequireDefault(_path);
+
+var _koaStatic = require('koa-static');
+
+var _koaStatic2 = _interopRequireDefault(_koaStatic);
+
 var _co = require('co');
 
 var _co2 = _interopRequireDefault(_co);
@@ -38,11 +50,8 @@ var _babelPolyfill2 = _interopRequireDefault(_babelPolyfill);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var convert = require('koa-convert');
-var path = require('path');
-var serve = require('koa-static');
+var app = new _koa2.default(); //koa1 转换器
 
-var app = new _koa2.default();
 
 _initController2.default.init(app, _koaSimpleRouter2.default);
 app.context.render = _co2.default.wrap((0, _koaSwig2.default)({
@@ -52,6 +61,6 @@ app.context.render = _co2.default.wrap((0, _koaSwig2.default)({
   ext: 'html',
   writeBody: false
 }));
-app.use(serve(_config2.default.get('staticDir')));
+app.use((0, _koaStatic2.default)(_config2.default.get('staticDir')));
 app.listen(_config2.default.get('port'));
 exports.default = app;

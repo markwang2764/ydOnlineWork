@@ -8,5 +8,5 @@ switch( process.env.NODE_ENV ) {
   module.exports = ProdWebpack;
   break;
   default:
-  module.exports = DevWebPack;
+  module.exports = DevWebpack;
 }

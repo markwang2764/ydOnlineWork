@@ -1,9 +1,9 @@
 import koa from 'koa'
 import router from 'koa-simple-router'
 import render from 'koa-swig'
-const convert = require('koa-convert');
-const path = require('path');
-const serve = require('koa-static');
+import convert from 'koa-convert'//koa1 转换器
+import path from 'path'
+import serve from 'koa-static'
 import co from 'co'
 import initController from './controller/initController.js'
 import CONFIG from './config/config.js'

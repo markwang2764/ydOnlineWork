@@ -72,6 +72,110 @@ var indexController = {
         return _ref2.apply(this, arguments);
       };
     }();
+  },
+  star: function star() {
+    var _this3 = this;
+
+    return function () {
+      var _ref3 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3(ctx, next) {
+        return regeneratorRuntime.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                if (!ctx.request.header['x-pjax']) {
+                  _context3.next = 4;
+                  break;
+                }
+
+                ctx.body = "<x-star></x-star>";
+                _context3.next = 7;
+                break;
+
+              case 4:
+                _context3.next = 6;
+                return ctx.render('star.html', {
+                  title: '星星点赞'
+                });
+
+              case 6:
+                ctx.body = _context3.sent;
+
+              case 7:
+              case 'end':
+                return _context3.stop();
+            }
+          }
+        }, _callee3, _this3);
+      }));
+
+      return function (_x5, _x6) {
+        return _ref3.apply(this, arguments);
+      };
+    }();
+  },
+  praise: function praise() {
+    var _this4 = this;
+
+    return function () {
+      var _ref4 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4(ctx, next) {
+        return regeneratorRuntime.wrap(function _callee4$(_context4) {
+          while (1) {
+            switch (_context4.prev = _context4.next) {
+              case 0:
+                if (!ctx.request.header['x-pjax']) {
+                  _context4.next = 4;
+                  break;
+                }
+
+                ctx.body = "<x-praise></x-praise>";
+                _context4.next = 7;
+                break;
+
+              case 4:
+                _context4.next = 6;
+                return ctx.render('index.html', {
+                  title: '大拇指点赞'
+                });
+
+              case 6:
+                ctx.body = _context4.sent;
+
+              case 7:
+              case 'end':
+                return _context4.stop();
+            }
+          }
+        }, _callee4, _this4);
+      }));
+
+      return function (_x7, _x8) {
+        return _ref4.apply(this, arguments);
+      };
+    }();
+  },
+  advertisement: function advertisement() {
+    var _this5 = this;
+
+    return function () {
+      var _ref5 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee5(ctx, next) {
+        return regeneratorRuntime.wrap(function _callee5$(_context5) {
+          while (1) {
+            switch (_context5.prev = _context5.next) {
+              case 0:
+                ctx.body = '<div style="height: 150px;background: orange;">。。。。大幅广告。。。。</div>';
+
+              case 1:
+              case 'end':
+                return _context5.stop();
+            }
+          }
+        }, _callee5, _this5);
+      }));
+
+      return function (_x9, _x10) {
+        return _ref5.apply(this, arguments);
+      };
+    }();
   }
 };
 exports.default = indexController;

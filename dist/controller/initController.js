@@ -15,6 +15,9 @@ var controllerInit = {
     app.use(router(function (_) {
       _.get('/index/index', _indexController2.default.index());
       _.get('/index/update', _indexController2.default.update());
+      _.get('/index/star', _indexController2.default.star());
+      _.get('/index/praise', _indexController2.default.praise());
+      _.get('/index/adv', _indexController2.default.advertisement());
     }));
   }
 };

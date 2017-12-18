@@ -3,7 +3,6 @@ class PraiseButton {
     constructor() {
     }
     clickAction() {
-      console.log(22);
       axios.get('/index/update')
       .then(function (response) {
         let num = response.data.data
@@ -14,5 +13,14 @@ class PraiseButton {
       });
     }
 }
-
- export default PraiseButton
+class Thumb extends PraiseButton {
+  constructor() {
+    super();
+  }
+}
+class Star extends PraiseButton {
+  constructor() {
+    super();
+  }
+}
+ export {Thumb, Star}

@@ -11,7 +11,8 @@ module.exports = {
       path.join(__dirname, '../src/public/scripts/indexspec.js')
     ],
     tags: [
-      path.join(__dirname, '../src/public/scripts/tags.es')
+      path.join(__dirname, '../src/public/scripts/tags.es'),
+      path.join(__dirname, '../src/public/scripts/star.es')
     ]
   },
   output: {
@@ -63,6 +64,17 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: './widget/index.html',
       template: 'src/widget/index.html',
+      inject: false,
+    }),
+    new HtmlWebpackPlugin({
+      filename: './views/star.html',
+      template: 'src/views/star.js',
+      inject: false,
+      chunks: ['vendor','index','tags']
+    }),
+    new HtmlWebpackPlugin({
+      filename: './widget/star.html',
+      template: 'src/widget/star.html',
       inject: false,
     })
   ]
