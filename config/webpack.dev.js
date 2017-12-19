@@ -3,6 +3,8 @@ const webpack = require('webpack')
 const liveReloadPlugin = require('webpack-livereload-plugin')
 const ExtractTextPlugin = require("extract-text-webpack-plugin")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
+const Manifest = require('webpack-manifest');
+
 
 module.exports = {
   entry: {
@@ -76,6 +78,20 @@ module.exports = {
       filename: './widget/star.html',
       template: 'src/widget/star.html',
       inject: false,
+    }),
+    new Manifest({
+      cache: [
+        '../public/css/vendor.css',
+      ],
+      timestamp: true,
+      filename: 'cache.manifest',
+      network: [
+        'http: //cdn.bootcss.com/ *',
+        'http: //localhost:35729/livereload.js'
+      ],
+      // fallback: ['/ /404.html'],
+      headcomment: "homework",
+      master: ['views/layout.html']
     })
   ]
 }

@@ -1,14 +1,14 @@
 module.exports = function(templateParams) {
-  var _cssList = ['vendor'];
-  var webAssetsHelp = require('./webAssetsHelp.js')(templateParams, _cssList);
-  var _html = "{% extends './layout.html' %}" +
-              "{% block title %}My Page{% endblock %}" +
-              "{% block styles %}" +
-              webAssetsHelp.styles +
-              "{% endblock %}" +
-              "{% block content %}{% include '../widget/index.html' %}{% endblock %}"+
-              "{% block script %}" +
-              '<script>' +
+        var _cssList = ['vendor'];
+        var webAssetsHelp = require('./webAssetsHelp.js')(templateParams, _cssList);
+        var _html = "{% extends './layout.html' %} " +
+                "{% block title %}{{title}}{% endblock %}" +
+                "{% block styles %} " +
+                webAssetsHelp.styles +
+                "{% endblock %}" +
+                '{% block content %}  {% include "../widget/index.html" %} {% endblock %}' +
+                '{% block script%}' +
+                '<script>' +
                 '(function(){var flag=false;' +
                 'var scriptsshow=[' + webAssetsHelp.scriptsshow + '];' +
                 'for(let i=0;i<scriptsshow.length;i++){' +
@@ -24,14 +24,15 @@ module.exports = function(templateParams) {
                 'then(function(data){localStorage.setItem( b, data.data);})' +
                 '}break;' + //end of for
                 '}' + //end of else
-                '}' + // end of for
-                // 'if(flag){' +
-                // 'LazyLoad.js(scriptsshow,function(){});' +
-                // '}' + //end of flag if
+                '}' + // end of foe
+                'if(flag){' +
+                'LazyLoad.js(scriptsshow,function(){});' +
+                '}' + //end of flag if
                 '})()' + //end of function
                 '</script>' +
-              //webAssetsHelp.scripts +
-              "{% endblock %}";
+                // webAssetsHelp.scripts +
+                '{% endblock%}';
+        return _html;
 
-return _html
+
 }

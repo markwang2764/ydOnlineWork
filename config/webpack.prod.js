@@ -3,6 +3,7 @@ const webpack = require('webpack')
 const liveReloadPlugin = require('webpack-livereload-plugin')
 const ExtractTextPlugin = require("extract-text-webpack-plugin")
 const optimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const HtmlWebpackPlugin = require("html-webpack-plugin")
 
 module.exports = {
   entry: {
@@ -16,6 +17,7 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname,'../dist/'),
+    publicPath: 'http://192.168.15.145:3000',
     filename: 'public/scripts/[name]-[hash:5].js'
   },
   module: {
@@ -60,6 +62,33 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       filename: 'public/scripts/common/vendor-[hash:5].min.js'
-    })
+    }),
+    new HtmlWebpackPlugin({
+      filename: './views/layout.html',
+      template: 'src/widget/layout.html',
+      inject: false
+    }),
+    new HtmlWebpackPlugin({
+      filename: './views/index.html',
+      template: 'src/views/index.js',
+      inject: false,
+      chunks: ['vendor','index','tags']
+    }),
+    new HtmlWebpackPlugin({
+      filename: './widget/index.html',
+      template: 'src/widget/index.html',
+      inject: false,
+    }),
+    new HtmlWebpackPlugin({
+      filename: './views/star.html',
+      template: 'src/views/star.js',
+      inject: false,
+      chunks: ['vendor','index','tags']
+    }),
+    new HtmlWebpackPlugin({
+      filename: './widget/star.html',
+      template: 'src/widget/star.html',
+      inject: false,
+    }),
   ]
 }

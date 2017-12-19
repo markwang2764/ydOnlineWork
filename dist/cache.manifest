@@ -1,0 +1,10 @@
+CACHE MANIFEST
+# Time: Tue Dec 19 2017 14:13:09 GMT+0800 (CST)
+# homework
+
+CACHE:
+../public/css/vendor.css
+
+NETWORK:
+http: //cdn.bootcss.com/ *
+http: //localhost:35729/livereload.js
